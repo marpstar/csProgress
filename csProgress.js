@@ -19,25 +19,25 @@ The above copyright notice and this permission notice shall be included in all c
     $.widget("cs.progressbar", {
 	
         options: {
-            bar: '',							/* CSS Class to apply to the indicator bar */
-            width: 'auto',						/* Width for the entire progress bar */
-            height: 15,							/* Height of the progress bar */
-            containerStyle: {					/* Style for the containing element */
+            bar: '',					/* CSS Class to apply to the indicator bar */
+            width: 'auto',				/* Width for the entire progress bar */
+            height: 15,					/* Height of the progress bar */
+            containerStyle: {				/* Style for the containing element */
                 borderRadius: 90,			    
                 border: '1px solid black',
                 background: 'rgba(0,0,0,.3)'
             },
-            barStyle: {							/* Base styles for the indicator bar */
+            barStyle: {					/* Base styles for the indicator bar */
                 border: 'none',
                 borderRadius: 90,
                 width: 0,
                 maxWidth: '100%',
                 borderRight: '1px solid black'
             },
-            progress: 0.0,						/* Initial Progress. Takes a float value (e.g. for 70% pass in .7 */
-            animate: true						/* Enable animations */
-			duration: 1300						/* Animation duration */
-			easing: 'easeOutCirc' 				/* jQuery UI Easing. See http://jqueryui.com/demos/effect/easing.html */
+            progress: 0.0,				/* Initial Progress. Takes a float value (e.g. for 70% pass in .7 */
+            animate: true				/* Enable animations */
+			duration: 1300			/* Animation duration */
+			easing: 'easeOutCirc' 		/* jQuery UI Easing. See http://jqueryui.com/demos/effect/easing.html */
         },
 		
         progressBar: null,
@@ -55,10 +55,6 @@ The above copyright notice and this permission notice shall be included in all c
             widget.setProgress(opts.progress);
 
             $(window).bind('resize.ProgressBar', function () {
-                widget.setProgress(opts.progress, false);
-            });
-
-            widget.element.parent().bind('progressResize', function () {
                 widget.setProgress(opts.progress, false);
             });
         },
